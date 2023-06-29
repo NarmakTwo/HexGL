@@ -41,6 +41,9 @@
     })();
     </script>
     <script>
+function delay(time) {
+  return new Promise(resolve => setTimeout(resolve, time));
+}
 // Check if the browser supports the Gamepad API
 if ("getGamepads" in navigator) {
   // Function to handle gamepad connection event
@@ -62,6 +65,12 @@ if ("getGamepads" in navigator) {
     for (let i = 0; i < 3; i++) {
       setTimeout(simulateClick, i * 100);
     }
+    delay(1000)
+    const element2 = document.getElementById("start");
+    if (element2) {
+      element2.click();
+    }
+    
     console.log('GP ready.')
   }
 
