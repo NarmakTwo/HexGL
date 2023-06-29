@@ -71,7 +71,7 @@ if ("getGamepads" in navigator) {
 // Check if the Gamepad API is supported by the browser
 if ("getGamepads" in navigator) {
   // Initialize a variable to track if step-2 has been clicked
-  let step2Clicked = false;
+  //let step2Clicked = false;
 
   // Function to handle gamepad button presses
   function handleGamepadButtonPress(event) {
@@ -87,12 +87,12 @@ if ("getGamepads" in navigator) {
           // Check if any button is pressed
           if (button.pressed) {
             // Check if step-2 has not been clicked yet
-            if (!step2Clicked) {
+            if (true) {
               // Trigger a click event on the element with id "step-2"
               document.getElementById("step-2").click();
 
               // Set step2Clicked to true to prevent subsequent clicks
-              step2Clicked = true;
+              //step2Clicked = true;
             }
             return; // Exit the function after one button press is detected
           }
