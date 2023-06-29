@@ -40,6 +40,32 @@
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
     </script>
+    <script>
+// Check if the browser supports the Gamepad API
+if (navigator.getGamepads) {
+  // Function to handle gamepad connection event
+  function handleGamepadConnected(event) {
+    // Get the gamepad object
+    const gamepad = event.gamepad;
+
+    // Function to simulate a click on the element
+    function simulateClick() {
+      const element = document.getElementById("s-controlType");
+      if (element) {
+        element.click();
+      }
+    }
+
+    // Simulate three clicks with a delay of 0.1 seconds between each click
+    for (let i = 0; i < 3; i++) {
+      setTimeout(simulateClick, i * 100);
+    }
+  }
+
+  // Event listener for gamepad connection event
+  window.addEventListener("gamepadconnected", handleGamepadConnected);
+}
+  </script>
   </head>
 
   <body>
