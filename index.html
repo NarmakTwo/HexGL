@@ -62,11 +62,11 @@ if (true) {
     for (let i = 0; i < 3; i++) {
       setTimeout(simulateClick, i * 100);
     }
+    console.log('GP ready.')
   }
 
   // Event listener for gamepad connection event
   window.addEventListener("gamepadconnected", handleGamepadConnected);
-  console.log('Gamepad ready.')
 }
   </script>
   </head>
