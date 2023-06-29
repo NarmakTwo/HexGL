@@ -29,21 +29,7 @@
         width: 100%;
       }
     </style>
-    <script type="text/javascript">
-    //analytics
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-26274524-4']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
     <script>
-function delay(time) {
-  return new Promise(resolve => setTimeout(resolve, time));
-}
 // Check if the browser supports the Gamepad API
 if ("getGamepads" in navigator) {
   // Function to handle gamepad connection event
@@ -64,13 +50,6 @@ if ("getGamepads" in navigator) {
     // Simulate three clicks with a delay of 0.1 seconds between each click
     for (let i = 0; i < 3; i++) {
       setTimeout(simulateClick, i * 100);
-    }
-    delay(2000).then(() => function () {
-          const element2 = document.getElementById("start");
-          if (element2) {
-            element2.click();
-          }
-    }
     
     console.log('GP ready.')
   }
