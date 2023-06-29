@@ -65,10 +65,11 @@ if ("getGamepads" in navigator) {
     for (let i = 0; i < 3; i++) {
       setTimeout(simulateClick, i * 100);
     }
-    delay(1000)
-    const element2 = document.getElementById("start");
-    if (element2) {
-      element2.click();
+    delay(2000).then(() => function () {
+          const element2 = document.getElementById("start");
+          if (element2) {
+            element2.click();
+          }
     }
     
     console.log('GP ready.')
