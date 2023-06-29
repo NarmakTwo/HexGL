@@ -42,7 +42,7 @@
     </script>
     <script>
 // Check if the browser supports the Gamepad API
-if (true) {
+if ("getGamepads" in navigator) {
   // Function to handle gamepad connection event
   function handleGamepadConnected(event) {
     console.log('GP connected.')
