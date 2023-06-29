@@ -68,6 +68,42 @@ if ("getGamepads" in navigator) {
   // Event listener for gamepad connection event
   window.addEventListener("gamepadconnected", handleGamepadConnected);
 }
+// Check if the Gamepad API is supported by the browser
+if ("getGamepads" in navigator) {
+  // Initialize a variable to track if step-2 has been clicked
+  let step2Clicked = false;
+
+  // Function to handle gamepad button presses
+  function handleGamepadButtonPress(event) {
+    // Get the connected gamepads
+    const gamepads = navigator.getGamepads();
+
+    // Loop through all connected gamepads
+    for (const gamepad of gamepads) {
+      // Check if the gamepad is connected and has buttons
+      if (gamepad && gamepad.buttons.length > 0) {
+        // Loop through all buttons on the gamepad
+        for (const button of gamepad.buttons) {
+          // Check if any button is pressed
+          if (button.pressed) {
+            // Check if step-2 has not been clicked yet
+            if (!step2Clicked) {
+              // Trigger a click event on the element with id "step-2"
+              document.getElementById("step-2").click();
+
+              // Set step2Clicked to true to prevent subsequent clicks
+              step2Clicked = true;
+            }
+            return; // Exit the function after one button press is detected
+          }
+        }
+      }
+    }
+  }
+
+  // Add an event listener for gamepad button presses
+  window.addEventListener("gamepadbuttondown", handleGamepadButtonPress);
+}
   </script>
   </head>
 
@@ -104,8 +140,8 @@ if ("getGamepads" in navigator) {
     <div id="credits" style="display: none">
       <h3>Code</h3>
       <p><b>Concept and Development</b><br>Thibaut Despoulain (BKcore)</p>
-      <p><b>Contributors</b><br>townxelliot<br>mahesh.kk</p>
-      <p><b>Technologies</b><br>WebGL<br>JavaScript<br>CoffeeScript<br>Three.js<br>LeapMotion</p>
+      <p><b>Contributors</b><br>townxelliot<br>mahesh.kk<br>narmak2</p>
+      <p><b>Technologies</b><br>WebGL<br>JavaScript<br>CoffeeScript<br>Three.js<br>LeapMotion<br>Gamepad</p>
       <h3>Graphics</h3>
       <p><b>HexMKI base model</b><br>Charnel</p>
       <p><b>Track texture</b><br>Nobiax</p>
