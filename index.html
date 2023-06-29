@@ -42,14 +42,16 @@
     </script>
     <script>
 // Check if the browser supports the Gamepad API
-if (navigator.getGamepads) {
+if (true) {
   // Function to handle gamepad connection event
   function handleGamepadConnected(event) {
+    console.log('GP connected.')
     // Get the gamepad object
     const gamepad = event.gamepad;
 
     // Function to simulate a click on the element
     function simulateClick() {
+      console.log('Simulating Clicks.')
       const element = document.getElementById("s-controlType");
       if (element) {
         element.click();
@@ -64,6 +66,7 @@ if (navigator.getGamepads) {
 
   // Event listener for gamepad connection event
   window.addEventListener("gamepadconnected", handleGamepadConnected);
+  console.log('Gamepad ready.')
 }
   </script>
   </head>
